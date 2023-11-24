@@ -42,18 +42,15 @@ let controllerGestion = {
             })
         }
     },
-    createRegister : async(req,res) => {
-        const { body } = req;
-        const myRegister = {
-            ...body,
-            uuid : generateUUID(),
-        } 
-        const myNewRegister = gestionModel.create(myRegister);
+    getOneRegister : async (req,res)=>{
 
-        if(){
-            return res.json({log: "hay algo "})
-        }
     },
+    createRegister : async(req,res) => {
+    },
+    updateRegister : async(req,res) =>{
+    },
+    deleteRegister : async(req,res) =>{   
+    }
 }
 
 

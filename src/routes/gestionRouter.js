@@ -5,15 +5,27 @@ import { controllerGestion, } from '../controllers/index.js'
 const gestionRouter = Router();
 
 //destructuring of controller
-const { getAllRegister,createRegister } = controllerGestion;
+const { 
+        getAllRegister,
+        createRegister,
+        getOneRegister,
+        updateRegister,
+        deleteRegister } = controllerGestion;
 
 //get all registers 
-gestionRouter.get("/",  getAllRegister)
+gestionRouter.get("/",  getAllRegister);
+
+//get one register 
+gestionRouter.get("/:uuid", getOneRegister);
 
 //create register 
+gestionRouter.post('/', createRegister);
 
-gestionRouter.post('/', createRegister)
+//update register 
+gestionRouter.post('/:uuid', updateRegister);
 
+//delete register 
+gestionRouter.delete("/:uuid", deleteRegister);
 
 
 export default gestionRouter;

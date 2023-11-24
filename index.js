@@ -5,8 +5,6 @@ async function main(){
     app.listen(PORT,()=>{
         console.log(`Server Running on http://localhost:${PORT}`)
     });
-
-    
 }
 
-main()
+main();

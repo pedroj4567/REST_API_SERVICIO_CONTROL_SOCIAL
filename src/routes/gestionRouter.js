@@ -1,12 +1,19 @@
 import { Router } from "express";
-// import {} from '../controllers'
+import { controllerGestion, } from '../controllers/index.js'
+
+//instance router
 const gestionRouter = Router();
 
-//get all registers 
+//destructuring of controller
+const { getAllRegister,createRegister } = controllerGestion;
 
-// gestionRouter.get("/",  (req, res) =>{
-//     res.json({message : "Hola mundo"});
-// })
+//get all registers 
+gestionRouter.get("/",  getAllRegister)
+
+//create register 
+
+gestionRouter.post('/', createRegister)
+
 
 
 export default gestionRouter;

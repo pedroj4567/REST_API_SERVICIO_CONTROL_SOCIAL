@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports: 
+      - "5430:5432"
+    volumes:
+      - ./dataStorage:/var/lib/postgresql/data/pgdata
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=alcadiaJFX
+
+  pgadmin:
+      image: dpage/pgadmin4
+      environment:
+        PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+        PGADMIN_DEFAULT_PASSWORD: "admin"
+      ports: 
+        - "60:80"
+      depends_on:
+        - postgres
+
